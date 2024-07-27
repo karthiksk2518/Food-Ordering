@@ -11,10 +11,10 @@ const FoodDisplay = ({ category }) => {
         <div className="mt-[30px]" id="food-display">
             <h2 className="font-bold text-[2vw] md:text-[24px]">Top Dishes Near You</h2>
             <div className="food-display-list">
-                {food_list.map((item) => (
+                {food_list.map((item, index) => (
                     <FoodItem
-                        key={item.id}
-                        id={item.id}
+                        key={index}
+                        id={item._id}
                         name={item.name}
                         description={item.description}
                         price={item.price}
