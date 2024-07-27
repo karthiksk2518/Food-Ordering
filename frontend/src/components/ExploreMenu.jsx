@@ -5,7 +5,7 @@ import './ExploreMenu.css';
 const ExploreMenu = ({ category, setCategory }) => {
 
     return (
-        <div className="flex flex-col gap-[20px]" id="explore=menu">
+        <div className="flex flex-col gap-[20px]" id="explore-menu">
             <h1 className="text-[#262626] font-bold">Explore Our Menu</h1>
             <p className="max-w-[60%] text-[#808080]">Choose from a diverse menu featuring a delectable array of dishes. Our mission is to satisfy your cravings and elevate your dining experience, one delicious meal at a time.</p>
             <div className="flex justify-between items-center gap-[30px] text-center my-5 mx-0 overflow-x-scroll explore-menu-list">
