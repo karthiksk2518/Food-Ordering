@@ -9,6 +9,9 @@ export default {
       fontSize: {
         'responsive': 'max(1.4vw, 16px)',
       },
+      backgroundImage: {
+        'header-bg': "url('/frontend/src/assets/header_img.png')",
+      },
     },
   },
   plugins: [],
