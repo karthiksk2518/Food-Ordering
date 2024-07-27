@@ -1,0 +1,7 @@
+.explore-menu-list::-webkit-scrollbar {
+    display: none;
+}
+
+.text-size {
+    font-size: max(1.4vw,16px);
+}
