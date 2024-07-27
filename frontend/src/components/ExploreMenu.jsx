@@ -25,8 +25,8 @@ const ExploreMenu = ({ category, setCategory }) => {
 }
 
 ExploreMenu.propTypes = {
-    category : PropTypes.string.isRequired,
-    setCategory : PropTypes.string.isRequired,
+    category: PropTypes.string.isRequired,
+    setCategory: PropTypes.string.isRequired,
 };
 
 export default ExploreMenu

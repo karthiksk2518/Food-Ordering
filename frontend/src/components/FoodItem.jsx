@@ -12,7 +12,7 @@ const FoodItem = ({ id, name, price, description, image }) => {
             <div className="relative">
                 <img className="w-[100%] rounded-t-[10px]" src={image} alt="" />
                 {!cartItems[id] ? (
-                    <img className="absolute w-[35px] bottom-[15px] right-[15px] cursor-pointer rounded-[50%]" onClick={() => addToCart(id)} src={assets.add_icon_white} alt=""/> 
+                    <img className="absolute w-[35px] bottom-[15px] right-[15px] cursor-pointer rounded-[50%]" onClick={() => addToCart(id)} src={assets.add_icon_white} alt="" />
                 ) : (
                     <div className="absolute flex items-center bottom-[15px] right-[15px] gap-2.5 p-1.5 rounded-[50px] bg-white">
                         <img className="w-[30px] cursor-pointer" onClick={() => removeFromCart(id)} src={assets.remove_icon_red} alt="" />

@@ -5,7 +5,7 @@ import FoodItem from "./FoodItem";
 import './FoodDisplay.css';
 
 const FoodDisplay = ({ category }) => {
-    
+
     const { food_list } = useContext(StoreContext);
 
     return (
