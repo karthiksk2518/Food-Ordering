@@ -1,14 +1,15 @@
 import { useState } from 'react';
 import { assets } from '../assets/assets';
+import './Navbar.css';
 
 const Navbar = () => {
 
     const [menu, setMenu] = useState("home");
 
     return (
-        <div className="pt-5 flex justify-between items-center">
-            <img src={assets.logo} alt="" className="w-[150px]" />
-            <ul className="flex list-none gap-5 text-[#49557e] text-[18px]">
+        <div className="pt-5 flex justify-between items-center navbar">
+            <img src={assets.logo} alt="" className="w-[150px] navbar-logo" />
+            <ul className="flex list-none gap-5 text-[#49557e] text-[18px] navbar-menu">
                 <li onClick={() => setMenu("home")} className={`${menu === 'home' ? 'pb-1 border-b-2 border-[#49557e]' : ''} cursor-pointer`}>
                     Home
                 </li>
@@ -22,7 +23,7 @@ const Navbar = () => {
                     Contact Us
                 </li>
             </ul>
-            <div className="flex items-center gap-7">
+            <div className="flex items-center gap-7 navbar-right">
                 <img src={assets.search_icon} alt='' />
                 <div className="relative">
                     <img src={assets.basket_icon} alt='' />
@@ -30,7 +31,7 @@ const Navbar = () => {
                 </div>
                 <button
                     className='bg-transparent text-[16px] text-[#49557e] border-2 border-solid border-orange-800 
-                    p-1.5 pl-5 pr-5 rounded-[40px] cursor-pointer hover:bg-[#fff4f2] transition-all duration-300'
+                    p-[10px_30px] rounded-[40px] cursor-pointer hover:bg-[#fff4f2] transition-all duration-300'
                 >
                     Sign In
                 </button>
