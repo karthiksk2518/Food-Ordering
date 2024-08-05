@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { assets } from '../assets/assets';
 import { IoSearch } from "react-icons/io5";
 import { MdShoppingCart } from "react-icons/md";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
 
@@ -11,18 +12,18 @@ const Navbar = () => {
         <div className="pt-5 w-[100%] flex justify-between items-center navbar">
             <img src={assets.logo} alt="" className="w-[120px] md:w-[140px] lg:w-[150px] navbar-logo" />
             <ul className="hidden md:flex list-none md:gap-3 lg:gap-5 text-[#49557e] sm:text-[16px] md:text-[18px]">
-                <li onClick={() => setMenu("home")} className={`${menu === 'home' ? 'pb-1 border-b-2 border-[#49557e]' : ''} cursor-pointer`}>
+                <Link to="/" onClick={() => setMenu("home")} className={`${menu === 'home' ? 'pb-1 border-b-2 border-[#49557e]' : ''} cursor-pointer`}>
                     Home
-                </li>
-                <li onClick={() => setMenu("menu")} className={`${menu === 'menu' ? 'pb-1 border-b-2 border-[#49557e]' : ''} cursor-pointer`}>
+                </Link>
+                <a href='#explore-menu' onClick={() => setMenu("menu")} className={`${menu === 'menu' ? 'pb-1 border-b-2 border-[#49557e]' : ''} cursor-pointer`}>
                     Menu
-                </li>
-                <li onClick={() => setMenu("mobile-app")} className={`${menu === 'mobile-app' ? 'pb-1 border-b-2 border-[#49557e]' : ''} cursor-pointer`}>
+                </a>
+                <a href='#app-download' onClick={() => setMenu("mobile-app")} className={`${menu === 'mobile-app' ? 'pb-1 border-b-2 border-[#49557e]' : ''} cursor-pointer`}>
                     Mobile-App
-                </li>
-                <li onClick={() => setMenu("contact us")} className={`${menu === 'contact us' ? 'pb-1 border-b-2 border-[#49557e]' : ''} cursor-pointer`}>
+                </a>
+                <a href='#footer' onClick={() => setMenu("contact us")} className={`${menu === 'contact us' ? 'pb-1 border-b-2 border-[#49557e]' : ''} cursor-pointer`}>
                     Contact Us
-                </li>
+                </a>
             </ul>
             <div className="flex items-center gap-4 sm:gap-4 md:gap-7">
                 <IoSearch className='text-2xl md:text-3xl lg:text-4xl' />
