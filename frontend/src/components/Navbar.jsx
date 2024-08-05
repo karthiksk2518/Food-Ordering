@@ -8,7 +8,7 @@ const Navbar = () => {
 
     return (
         <div className="pt-5 w-[100%] flex justify-between items-center navbar">
-            <img src={assets.logo} alt="" className="w-[150px] navbar-logo" />
+            <img src={assets.logo} alt="" className="w-[100px] md:w-[150px] navbar-logo" />
             <ul className=" hidden md:flex list-none gap-5 text-[#49557e] text-[18px] navbar-menu">
                 <li onClick={() => setMenu("home")} className={`${menu === 'home' ? 'pb-1 border-b-2 border-[#49557e]' : ''} cursor-pointer`}>
                     Home
