@@ -13,7 +13,7 @@ const Footer = () => {
                         <img className="w-10 mr-[15px] cursor-pointer" src={assets.linkedin_icon} alt="" />
                     </div>
                 </div>
-                <div className="col-span-1 flex flex-col items-start gap-5">
+                <div className="col-span-2 md:col-span-1 flex flex-col items-start gap-5">
                     <h2 className="text-white">COMPANY</h2>
                     <ul>
                         <li className="mb-2.5 cursor-pointer">Home</li>
@@ -22,7 +22,7 @@ const Footer = () => {
                         <li className="mb-2.5 cursor-pointer">Privacy Policy</li>
                     </ul>
                 </div>
-                <div className="col-span-1 flex flex-col items-start gap-5">
+                <div className="col-span-2 md:col-span-1 flex flex-col items-start gap-5">
                     <h2 className="text-white">GET IN TOUCH</h2>
                     <ul>
                         <li className="mb-2.5 cursor-pointer">+91-7566236975</li>
