@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { assets } from '../assets/assets';
-import './Navbar.css';
 import { IoSearch } from "react-icons/io5";
 import { MdShoppingCart } from "react-icons/md";
 
