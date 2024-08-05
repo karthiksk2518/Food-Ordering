@@ -14,7 +14,7 @@ const Footer = () => {
                     </div>
                 </div>
                 <div className="col-span-2 md:col-span-1 flex flex-col items-start gap-5">
-                    <h2 className="text-white">COMPANY</h2>
+                    <h2 className="text-white text-3xl">COMPANY</h2>
                     <ul>
                         <li className="mb-2.5 cursor-pointer">Home</li>
                         <li className="mb-2.5 cursor-pointer">About Us</li>
@@ -23,7 +23,7 @@ const Footer = () => {
                     </ul>
                 </div>
                 <div className="col-span-2 md:col-span-1 flex flex-col items-start gap-5">
-                    <h2 className="text-white">GET IN TOUCH</h2>
+                    <h2 className="text-white text-3xl">GET IN TOUCH</h2>
                     <ul>
                         <li className="mb-2.5 cursor-pointer">+91-7566236975</li>
                         <li className="mb-2.5 cursor-pointer">karthikpatidar2518@gmail.com</li>
@@ -31,7 +31,7 @@ const Footer = () => {
                 </div>
             </div>
             <hr className="w-[100%] h-0.5 my-5 mx-0 bg-gray-500 border-none"/>
-            <p className="footer-copyright">
+            <p className="text-center">
                 &copy; 2024 Karthik Patidar - All Right Reserved.
             </p>
         </div>
