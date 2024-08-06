@@ -4,7 +4,7 @@ import { IoSearch } from "react-icons/io5";
 import { MdShoppingCart } from "react-icons/md";
 import { Link } from "react-router-dom";
 
-const Navbar = () => {
+const Navbar = ({setShowLogin}) => {
 
     const [menu, setMenu] = useState("home");
 
@@ -29,8 +29,9 @@ const Navbar = () => {
                 <IoSearch className='text-2xl md:text-3xl lg:text-4xl' />
                 <MdShoppingCart className='text-2xl md:text-3xl lg:text-4xl' />
                 <button
-                    className='bg-transparent text-[14px] md:text-[16px] text-[#49557e] border-2 border-solid border-orange-800 
-                    p-[7px_20px] md:p-[8px_25px] lg:p-[10px_30px] rounded-[40px] cursor-pointer hover:bg-[#fff4f2] transition-all duration-300'
+                    className='bg-transparent text-[14px] md:text-[16px] text-[#49557e] border-2 border-orange-600 
+                    p-[7px_20px] md:p-[8px_25px] lg:p-[10px_30px] rounded-[40px] cursor-pointer hover:bg-orange-600 hover:text-white transition-all duration-500'
+                    onClick={() => setShowLogin(true)}
                 >
                     Sign In
                 </button>
