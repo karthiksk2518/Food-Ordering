@@ -1,13 +1,4 @@
-.fadeIn {
+.login-popup-container {
+    width: max(23vw, 330px);
     animation: fadeIn 0.5s;
-  }
-  
-  @keyframes fadeIn {
-    0% {
-      opacity: 0;
-    }
-  
-    100% {
-      opacity: 1;
-    }
-  }
+}
