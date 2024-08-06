@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { ImCancelCircle } from "react-icons/im";
+import './LoginPopup.css'
 
 const LoginPopup = ({ setShowLogin }) => {
 
@@ -16,7 +17,7 @@ const LoginPopup = ({ setShowLogin }) => {
     }, []);
 
     return (
-        <div className="flex flex-col justify-center items-center w-[100%] h-[100%] bg-[#00000090] fixed z-50">
+        <div className="flex flex-col justify-center items-center w-[100%] h-[100%] bg-[#00000090] fixed z-50 fadeIn">
             <form className="login-popup-container w-[90%] sm:w-full flex flex-col gap-5 relative z-10 bg-white rounded-[10px] shadow-xl p-[25px_30px]">
                 <div className="login-popup-title flex justify-between items-center">
                     <h2 className="text-2xl font-semibold">{currState}</h2>
