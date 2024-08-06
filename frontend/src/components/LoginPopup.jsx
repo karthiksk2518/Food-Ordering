@@ -1,9 +1,19 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { ImCancelCircle } from "react-icons/im";
 
 const LoginPopup = ({ setShowLogin }) => {
 
     const [currState, setCurrState] = useState("Login");
+
+    useEffect(() => {
+        document.body.classList.add('no-scroll');
+        document.documentElement.classList.add('no-scroll');
+
+        return () => {
+            document.body.classList.remove('no-scroll');
+            document.documentElement.classList.remove('no-scroll');
+        };
+    }, []);
 
     return (
         <div className="flex flex-col justify-center items-center w-[100%] h-[100%] bg-[#00000090] fixed z-50">
@@ -16,7 +26,7 @@ const LoginPopup = ({ setShowLogin }) => {
                 <div className="login-popup-inputs flex flex-col gap-3">
                     {currState === "Login" ?
                         <></> :
-                        <label>Name<sup className="text-red-500">*</sup><br/>
+                        <label>Name<sup className="text-red-500">*</sup><br />
                             <input
                                 type="text"
                                 placeholder="Enter Your Name"
@@ -25,7 +35,7 @@ const LoginPopup = ({ setShowLogin }) => {
                             />
                         </label>
                     }
-                    <label>Email<sup className="text-red-500">*</sup><br/>
+                    <label>Email<sup className="text-red-500">*</sup><br />
                         <input
                             type="email"
                             placeholder="Enter Your Email"
@@ -33,7 +43,7 @@ const LoginPopup = ({ setShowLogin }) => {
                             className="w-full border border-[#c9c9c9] outline-none shadow-md rounded-[5px] p-2"
                         />
                     </label>
-                    <label>Password<sup className="text-red-500">*</sup><br/>
+                    <label>Password<sup className="text-red-500">*</sup><br />
                         <input
                             type="password"
                             placeholder="Enter Your Password"
@@ -52,16 +62,16 @@ const LoginPopup = ({ setShowLogin }) => {
                     <p>By continuing, i agree to the terms of use & privacy policy.</p>
                 </div>
                 {currState === "Login" ?
-                    <p>Create a new account? 
-                        <span 
+                    <p>Create a new account?
+                        <span
                             onClick={() => setCurrState("Sign Up")}
                             className="text-orange-500 ml-2 cursor-pointer"
                         >
                             Click here
                         </span>
                     </p> :
-                    <p>Already have an account? 
-                        <span 
+                    <p>Already have an account?
+                        <span
                             onClick={() => setCurrState("Login")}
                             className="text-orange-500 ml-2 cursor-pointer"
                         >
