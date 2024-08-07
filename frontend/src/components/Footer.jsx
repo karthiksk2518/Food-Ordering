@@ -1,7 +1,7 @@
 import { assets } from "../assets/assets";
 import { FaFacebook } from "react-icons/fa";
 import { BsTwitterX } from "react-icons/bs";
-import { FaLinkedin } from "react-icons/fa";
+import { FaLinkedin, FaInstagram  } from "react-icons/fa";
 
 const Footer = () => {
     return (
@@ -14,6 +14,7 @@ const Footer = () => {
                         <FaFacebook className="w-10 text-[60px] mr-[25px] cursor-pointer"/>
                         <BsTwitterX className="w-10 text-[60px] mr-[25px] cursor-pointer"/>
                         <FaLinkedin className="w-10 text-[60px] mr-[25px] cursor-pointer"/>
+                        <FaInstagram className="w-10 text-[60px] mr-[25px] cursor-pointer"/>
                     </div>
                 </div>
                 <div className="col-span-2 md:col-span-1 flex flex-col items-start gap-5">
