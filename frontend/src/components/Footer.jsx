@@ -1,4 +1,7 @@
-import { assets } from "../assets/assets"
+import { assets } from "../assets/assets";
+import { FaFacebook } from "react-icons/fa";
+import { BsTwitterX } from "react-icons/bs";
+import { FaLinkedin } from "react-icons/fa";
 
 const Footer = () => {
     return (
@@ -6,15 +9,15 @@ const Footer = () => {
             <div className="w-full grid grid-cols-1 md:grid-cols-4 gap-10 md:gap-20">
                 <div className="col-span-2 flex flex-col items-start gap-5">
                     <img src={assets.logo} alt="" />
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure tempora repudiandae labore voluptatem. Culpa assumenda sint nostrum vitae! Quo facere libero laborum similique at temporibus veritatis fugiat earum officiis sapiente!</p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit nostrum libero explicabo recusandae in possimus ipsum quasi et aliquid commodi?</p>
                     <div className="flex ">
-                        <img className="w-10 mr-[15px] cursor-pointer" src={assets.facebook_icon} alt="" />
-                        <img className="w-10 mr-[15px] cursor-pointer" src={assets.twitter_icon} alt="" />
-                        <img className="w-10 mr-[15px] cursor-pointer" src={assets.linkedin_icon} alt="" />
+                        <FaFacebook className="w-10 text-[60px] mr-[25px] cursor-pointer"/>
+                        <BsTwitterX className="w-10 text-[60px] mr-[25px] cursor-pointer"/>
+                        <FaLinkedin className="w-10 text-[60px] mr-[25px] cursor-pointer"/>
                     </div>
                 </div>
                 <div className="col-span-2 md:col-span-1 flex flex-col items-start gap-5">
-                    <h2 className="text-white text-3xl">COMPANY</h2>
+                    <h2 className="text-white text-2xl">COMPANY</h2>
                     <ul>
                         <li className="mb-2.5 cursor-pointer">Home</li>
                         <li className="mb-2.5 cursor-pointer">About Us</li>
@@ -23,7 +26,7 @@ const Footer = () => {
                     </ul>
                 </div>
                 <div className="col-span-2 md:col-span-1 flex flex-col items-start gap-5">
-                    <h2 className="text-white text-3xl">GET IN TOUCH</h2>
+                    <h2 className="text-white text-2xl">GET IN TOUCH</h2>
                     <ul>
                         <li className="mb-2.5 cursor-pointer">+91-7566236975</li>
                         <li className="mb-2.5 cursor-pointer">karthikpatidar2518@gmail.com</li>
