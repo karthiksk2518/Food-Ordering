@@ -6,7 +6,7 @@ const PlaceOrder = () => {
     const { getTotalCartAmount } = useContext(StoreContext);
 
     return (
-        <form className="flex justify-between items-start gap-[50px] mt-[100px]">
+        <form className="flex flex-col sm:flex-row justify-between items-start gap-[50px] mt-[100px]">
             <div className="w-[100%] " style={{ maxWidth: 'max(30%, 500px)' }}>
                 <p className="text-[30px] font-semibold mb-[50px]">Delivery Information</p>
                 <div className="multi-fields flex gap-2.5">
