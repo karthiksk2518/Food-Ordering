@@ -16,6 +16,9 @@ export default {
       fontSize: {
         'responsive': 'max(1.4vw, 16px)',
       },
+      gridTemplateColumns: {
+        'custom': '1fr 1.5fr 1fr 1fr 1fr 0.5fr',
+      },
     },
   },
   plugins: [],
