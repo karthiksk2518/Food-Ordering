@@ -12,7 +12,7 @@ const Cart = () => {
     return (
         <div className="cart mt-[100px]">
             <div className="cart-items">
-                <div className="grid grid-cols-custom items-center" style={{ fontSize: 'max(1vw, 12px)' }}>
+                <div className="kundan grid grid-cols-custom items-center" style={{ fontSize: 'max(1vw, 12px)' }}>
                     <p>Items</p>
                     <p>Title</p>
                     <p>Price</p>
@@ -31,13 +31,13 @@ const Cart = () => {
                                         style={{ fontSize: 'max(1vw, 12px)' }}
                                     >
                                         <img src={item.image} alt=""
-                                            className="w-[50px] h-[50px] object-cover rounded-full"
+                                            className="w-[30px] h-[30px] sm:w-[50px] sm:h-[50px] object-cover rounded-full"
                                         />
                                         <p>{item.name}</p>
                                         <p>${item.price}</p>
                                         <p>{cartItems[item._id]}</p>
-                                        <p>${item.price * cartItems[item._id]}</p>
-                                        <MdDeleteForever onClick={() => removeFromCart(item._id)} className="cursor-pointer" />
+                                        <p className="ml-[-6px] sm:ml-0">${item.price * cartItems[item._id]}</p>
+                                        <MdDeleteForever onClick={() => removeFromCart(item._id)} className="cursor-pointer text-[30px]" />
                                     </div>
                                     <hr />
                                 </div>
