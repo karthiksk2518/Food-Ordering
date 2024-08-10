@@ -54,7 +54,7 @@ const LoginPopup = ({ setShowLogin }) => {
                     </label>
                 </div>
 
-                <button className="border-none bg-orange-500 text-white rounded-[5px] p-2 cursor-pointer">
+                <button className="border-none bg-[#7608f0] text-white rounded-[5px] p-2 cursor-pointer">
                     {currState === "Sign Up" ? "Create Account" : "Login"}
                 </button>
 
@@ -66,7 +66,7 @@ const LoginPopup = ({ setShowLogin }) => {
                     <p>Create a new account?
                         <span
                             onClick={() => setCurrState("Sign Up")}
-                            className="text-orange-500 ml-2 cursor-pointer"
+                            className="text-[#7608f0] ml-2 cursor-pointer"
                         >
                             Click here
                         </span>
@@ -74,7 +74,7 @@ const LoginPopup = ({ setShowLogin }) => {
                     <p>Already have an account?
                         <span
                             onClick={() => setCurrState("Login")}
-                            className="text-orange-500 ml-2 cursor-pointer"
+                            className="text-[#7608f0] ml-2 cursor-pointer"
                         >
                             Click here
                         </span>
