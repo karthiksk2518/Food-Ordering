@@ -66,7 +66,7 @@ const Cart = () => {
                         </div>
                     </div>
                     <button
-                        className="border-none text-white bg-orange-500 p-[12px_0px] rounded-[4px] cursor-pointer"
+                        className="border-none text-white bg-[#7608f0] p-[12px_0px] rounded-[4px] cursor-pointer"
                         style={{ width: 'max(15vw, 200px)' }}
                         onClick={getTotalCartAmount() === 0 ? () => {toast.error("Add Item Into Cart")} : () => navigate('/order')}
                     >

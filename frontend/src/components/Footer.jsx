@@ -8,7 +8,7 @@ const Footer = () => {
         <div className="text-[#d9d9d9] bg-[#323232] flex flex-col items-center gap-5 py-5 px-[8vw] pt-8 mt-[30px]" id="footer">
             <div className="w-full grid grid-cols-1 md:grid-cols-4 gap-10 md:gap-20">
                 <div className="col-span-2 flex flex-col items-start gap-5">
-                    <img src={assets.logo} alt="" />
+                    <img src={assets.yb_logo} alt="" className="w-[50%] h-[40%]"/>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit nostrum libero explicabo recusandae in possimus ipsum quasi et aliquid commodi?</p>
                     <div className="flex ">
                         <FaFacebook className="w-10 text-[60px] mr-[25px] cursor-pointer"/>

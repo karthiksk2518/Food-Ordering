@@ -12,36 +12,36 @@ const PlaceOrder = () => {
                 <div className="multi-fields flex gap-2.5">
                     <input
                         type="text" placeholder="First Name" required 
-                        className="mb-[15px] w-[100%] p-2.5 border rounded-[4px] outline-orange-500 "/>
+                        className="mb-[15px] w-[100%] p-2.5 border rounded-[4px] outline-[#7608f0] "/>
                     <input
                         type="text" placeholder="Last Name" required 
-                        className="mb-[15px] w-[100%] p-2.5 border rounded-[4px] outline-orange-500 "/>
+                        className="mb-[15px] w-[100%] p-2.5 border rounded-[4px] outline-[#7608f0] "/>
                 </div>
                 <input
                     type="email" placeholder="Email Address" required 
-                    className="mb-[15px] w-[100%] p-2.5 border rounded-[4px] outline-orange-500 "/>
+                    className="mb-[15px] w-[100%] p-2.5 border rounded-[4px] outline-[#7608f0] "/>
                 <input
                     type="text" placeholder="Street" required 
-                    className="mb-[15px] w-[100%] p-2.5 border rounded-[4px] outline-orange-500 "/>
+                    className="mb-[15px] w-[100%] p-2.5 border rounded-[4px] outline-[#7608f0] "/>
                 <div className="multi-fields flex gap-2.5">
                     <input
                         type="text" placeholder="City" required 
-                        className="mb-[15px] w-[100%] p-2.5 border rounded-[4px] outline-orange-500 "/>
+                        className="mb-[15px] w-[100%] p-2.5 border rounded-[4px] outline-[#7608f0] "/>
                     <input
                         type="text" placeholder="State" required 
-                        className="mb-[15px] w-[100%] p-2.5 border rounded-[4px] outline-orange-500 "/>
+                        className="mb-[15px] w-[100%] p-2.5 border rounded-[4px] outline-[#7608f0] "/>
                 </div>
                 <div className="multi-fields flex gap-2.5">
                     <input
                         type="text" placeholder="Zip Code" required 
-                        className="mb-[15px] w-[100%] p-2.5 border rounded-[4px] outline-orange-500 "/>
+                        className="mb-[15px] w-[100%] p-2.5 border rounded-[4px] outline-[#7608f0] "/>
                     <input
                         type="text" placeholder="Country" required 
-                        className="mb-[15px] w-[100%] p-2.5 border rounded-[4px] outline-orange-500 "/>
+                        className="mb-[15px] w-[100%] p-2.5 border rounded-[4px] outline-[#7608f0] "/>
                 </div>
                 <input
                     type="text" placeholder="Phone" required 
-                    className="mb-[15px] w-[100%] p-2.5 border rounded-[4px] outline-orange-500 "/>
+                    className="mb-[15px] w-[100%] p-2.5 border rounded-[4px] outline-[#7608f0] "/>
             </div>
             <div className="place-order-right w-[100%]" style={{ maxWidth: 'max(40%, 500px)' }}>
                 <div className="cart-total flex flex-1 flex-col gap-5">
@@ -63,7 +63,7 @@ const PlaceOrder = () => {
                         </div>
                     </div>
                     <button
-                        className="border-none text-white bg-orange-500 p-[12px_0px] mt-[30px] rounded-[4px] cursor-pointer"
+                        className="border-none text-white bg-[#7608f0] p-[12px_0px] mt-[30px] rounded-[4px] cursor-pointer"
                         style={{ width: 'max(15vw, 200px)' }}
                     >
                         PROCEED TO PAYMENT

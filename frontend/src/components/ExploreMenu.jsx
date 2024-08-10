@@ -13,7 +13,7 @@ const ExploreMenu = ({ category, setCategory }) => {
                     return (
                         <div onClick={() => setCategory(prev => prev === item.menu_name ? "All" : item.menu_name)}
                             key={index} className="explore-menu-list-item">
-                            <img src={item.menu_image} alt="" className={`${category === item.menu_name ? "border-4 border-orange-500 p-0.5" : ""} w-[7.5vw] min-w-[80px] cursor-pointer rounded-[50%] transition-all duration-200`} />
+                            <img src={item.menu_image} alt="" className={`${category === item.menu_name ? "border-4 border-[#7608f0] p-0.5" : ""} w-[7.5vw] min-w-[80px] cursor-pointer rounded-[50%] transition-all duration-200`} />
                             <p className="mt-[10px] text-[#747474] text-responsive cursor-pointer">{item.menu_name}</p>
                         </div>
                     )
