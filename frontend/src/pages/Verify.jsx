@@ -1,6 +1,7 @@
 import { useContext, useEffect } from "react";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import { StoreContext } from "../Context/StoreContext";
+import {toast} from "react-toastify"
 import axios from "axios";
 
 const Verify = () => {
@@ -14,9 +15,10 @@ const Verify = () => {
     const verifyPayment = async () => {
         const response = await axios.post(url+"/api/order/verify", {success, orderId});
         console.log("Verification Response:", response.data);
-        
+
         if(response.data.success) {
-            navigate("/myOrders");
+            // navigate("/myOrders");
+            toast.success("placed ordered successfully")
         }
         else {
             navigate("/");
