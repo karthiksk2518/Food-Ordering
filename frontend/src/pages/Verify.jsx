@@ -17,8 +17,8 @@ const Verify = () => {
         console.log("Verification Response:", response.data);
 
         if(response.data.success) {
-            // navigate("/myOrders");
-            toast.success("placed ordered successfully")
+            navigate("/myOrders");
+            toast.success("placed ordered successfully");
         }
         else {
             navigate("/");
