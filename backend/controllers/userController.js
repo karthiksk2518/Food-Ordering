@@ -4,7 +4,6 @@ const jwt = require("jsonwebtoken");
 const validator = require("validator");
 require("dotenv").config();
 
-//login user
 exports.loginUser = async (req, res) => {
     const {email, password} = req.body;
 
@@ -23,7 +22,7 @@ exports.loginUser = async (req, res) => {
         if(!isMatch) {
             return res.json({
                 success: false,
-                message: "Invalid password",
+                message: "Invalid Password",
             });
         }
 
@@ -31,6 +30,7 @@ exports.loginUser = async (req, res) => {
         console.log(token);
         res.json({
             success: true,
+            message: "Logged in successfully",
             token,
         });
 
@@ -47,12 +47,10 @@ const createToken = (id) => {
     return jwt.sign({ id }, process.env.JWT_SECRET)
 }
 
-//register user
 exports.registerUser = async (req, res) => {
     const { name, email, password } = req.body;
 
     try {
-        //checking is user Already exists
         const exists = await userModel.findOne({ email });
         if (exists) {
             return res.json({
@@ -61,7 +59,6 @@ exports.registerUser = async (req, res) => {
             });
         }
 
-        //validating email format and strong password
         if (!validator.isEmail(email)) {
             return res.json({
                 success: false,
@@ -71,11 +68,10 @@ exports.registerUser = async (req, res) => {
         if (password.length < 8) {
             return res.json({
                 success: false,
-                message: "please enter a strong password",
+                message: "Please enter a strong password",
             });
         }
 
-        //hashing user password
         const hashedPassword = await bcrypt.hash(password, 10);
 
         const newUser = new userModel({
@@ -89,6 +85,7 @@ exports.registerUser = async (req, res) => {
 
         res.json({
             success: true,
+            message: "User registered successfully",
             token,
         });
 
@@ -96,7 +93,7 @@ exports.registerUser = async (req, res) => {
         console.log(error);
         res.json({
             success: false,
-            message: "Error registering user"
+            message: "Error in registering user"
         });
     }
 }
