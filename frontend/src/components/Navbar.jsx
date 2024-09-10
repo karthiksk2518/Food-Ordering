@@ -6,6 +6,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { StoreContext } from '../Context/StoreContext';
 import { IoBagHandleOutline } from "react-icons/io5";
 import { MdOutlineLogout } from "react-icons/md";
+import { toast } from "react-hot-toast";
 import "./Navbar.css";
 
 const Navbar = ({ setShowLogin }) => {
@@ -17,6 +18,7 @@ const Navbar = ({ setShowLogin }) => {
     const logout = () => {
         localStorage.removeItem("token");
         setToken(null);
+        toast.success("Logged out successfully");
         navigate("/");
     }
 
