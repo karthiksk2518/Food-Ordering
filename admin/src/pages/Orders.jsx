@@ -27,12 +27,14 @@ const Orders = ({url}) => {
         });
         if(response.data.success) {
             await fetchAllOrders();
+            toast.success(response.data.message);
         }
     }
 
     useEffect(() => {
         fetchAllOrders(); 
     },[])
+    
     return (
         <div className="order add w-[70%] mt-[50px] text-[#6d6d6d] text-[16px] flex-col" style={{ marginLeft: `max(5vw,25px)` }}>
             <h3 className="font-semibold text-2xl">Order Page</h3>
