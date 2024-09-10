@@ -1,7 +1,7 @@
 import { useContext, useEffect } from "react";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import { StoreContext } from "../Context/StoreContext";
-import {toast} from "react-toastify"
+import {toast} from "react-hot-toast"
 import axios from "axios";
 
 const Verify = () => {
@@ -18,7 +18,7 @@ const Verify = () => {
 
         if(response.data.success) {
             navigate("/myOrders");
-            toast.success("Order Placed Successfully");
+            toast.success(response.data.message);
         }
         else {
             navigate("/");

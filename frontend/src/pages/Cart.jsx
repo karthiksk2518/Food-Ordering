@@ -2,7 +2,7 @@ import { useContext } from "react";
 import { StoreContext } from "../Context/StoreContext";
 import { MdDeleteForever } from "react-icons/md";
 import { useNavigate } from "react-router-dom";
-import{ toast } from 'react-toastify';
+import{ toast } from 'react-hot-toast';
 
 const Cart = ({ setShowLogin }) => {
 

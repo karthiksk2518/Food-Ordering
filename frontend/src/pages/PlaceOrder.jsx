@@ -1,7 +1,6 @@
 import { useContext, useState } from "react"
 import { StoreContext } from "../Context/StoreContext"
 import axios from "axios";
-// import { useNavigate } from "react-router-dom";
 
 const PlaceOrder = () => {
 
