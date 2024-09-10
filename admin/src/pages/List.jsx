@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react"
-import { toast } from "react-toastify";
+import { toast } from "react-hot-toast";
 import { MdDeleteForever } from "react-icons/md";
 
 const List = ({url}) => {

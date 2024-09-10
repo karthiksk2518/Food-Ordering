@@ -4,8 +4,7 @@ import { Routes, Route } from "react-router-dom"
 import Add from "./pages/Add";
 import List from "./pages/List";
 import Orders from "./pages/Orders";
-import 'react-toastify/dist/ReactToastify.css';
-import { ToastContainer } from 'react-toastify';
+import { Toaster } from 'react-hot-toast';
 
 const App = () => {
 
@@ -13,7 +12,7 @@ const App = () => {
 
   return (
     <div>
-      <ToastContainer />
+      <Toaster />
       <Navbar />
       <hr />
       <div className="app-content flex">
