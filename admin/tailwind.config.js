@@ -13,13 +13,11 @@ export default {
       '2xl': '1536px',
     },
     extend: {
-      fontSize: {
-        'responsive': 'max(1.4vw, 16px)',
-      },
       gridTemplateColumns: {
-        'custom': '1fr 1.5fr 1fr 1fr 1fr 0.5fr',
-        'myordersCustom': '0.5fr 2fr 1fr 1fr 2fr 1fr',
-        'resmyordersCustom': '1fr 2fr 1fr'
+        'custom': '0.5fr 2fr 1fr 1fr 0.5fr',
+        'custom1': '1fr 3fr 1fr',
+        'custom2': '0.5fr 2fr 1fr 1fr 1fr',
+        'custom3': '0.5fr 2fr 1fr'
       },
     },
   },

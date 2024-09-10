@@ -2,17 +2,26 @@ import { useContext } from "react";
 import { StoreContext } from "../Context/StoreContext";
 import { MdDeleteForever } from "react-icons/md";
 import { useNavigate } from "react-router-dom";
-import toast from 'react-hot-toast';
+import{ toast } from 'react-toastify';
 
-const Cart = () => {
+const Cart = ({ setShowLogin }) => {
 
-    const { cartItems, food_list, removeFromCart, getTotalCartAmount } = useContext(StoreContext);
+    const { cartItems, food_list, removeFromCart, getTotalCartAmount, url, token } = useContext(StoreContext);
     const navigate = useNavigate();
+
+    const loginVerify = () => {
+        if(token) {
+            navigate('/order');
+        }
+        else {
+            setShowLogin(true);
+        }
+    }
 
     return (
         <div className="cart mt-[100px]">
             <div className="cart-items">
-                <div className="kundan grid grid-cols-custom items-center" style={{ fontSize: 'max(1vw, 12px)' }}>
+                <div className="grid grid-cols-custom items-center" style={{ fontSize: 'max(1vw, 12px)' }}>
                     <p>Items</p>
                     <p>Title</p>
                     <p>Price</p>
@@ -30,7 +39,7 @@ const Cart = () => {
                                     <div className="cart-items-item m-[10px_0px] text-black grid grid-cols-custom items-center"
                                         style={{ fontSize: 'max(1vw, 12px)' }}
                                     >
-                                        <img src={item.image} alt=""
+                                        <img src={url + "/images/" +item.image} alt=""
                                             className="w-[30px] h-[30px] sm:w-[50px] sm:h-[50px] object-cover rounded-full"
                                         />
                                         <p>{item.name}</p>
@@ -68,7 +77,7 @@ const Cart = () => {
                     <button
                         className="border-none text-white bg-[#7608f0] p-[12px_0px] rounded-[4px] cursor-pointer"
                         style={{ width: 'max(15vw, 200px)' }}
-                        onClick={getTotalCartAmount() === 0 ? () => {toast.error("Add Item Into Cart")} : () => navigate('/order')}
+                        onClick={getTotalCartAmount() === 0 ? () => {toast.error("Add Item Into Cart")} : loginVerify}
                     >
                         PROCEED TO CHECKOUT
                     </button>

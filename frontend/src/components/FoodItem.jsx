@@ -5,12 +5,12 @@ import PropTypes from 'prop-types';
 
 const FoodItem = ({ id, name, price, description, image }) => {
 
-    const { cartItems, addToCart, removeFromCart } = useContext(StoreContext);
+    const { cartItems, addToCart, removeFromCart, url } = useContext(StoreContext);
 
     return (
         <div className="w-[100%] m-auto rounded-[10px] shadow-md shadow-[#0000005f] transition-all duration-1000 animate-fadeIn hover:scale-105">
             <div className="relative">
-                <img className="w-[100%] rounded-t-[10px]" src={image} alt="" />
+                <img className="w-[100%] rounded-t-[10px]" src={url+ "/images/" + image} alt="" />
                 {!cartItems[id] ? (
                     <img className="absolute w-[35px] bottom-[15px] right-[15px] cursor-pointer rounded-[50%]" onClick={() => addToCart(id)} src={assets.add_icon_white} alt="" />
                 ) : (
