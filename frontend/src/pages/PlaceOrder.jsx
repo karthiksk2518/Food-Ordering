@@ -27,18 +27,18 @@ const PlaceOrder = () => {
 
     const placeOrder = async (event) => {
         event.preventDefault();
-        let orderIems = [];
+        let orderItems = [];
         food_list.map((item) => {
             if(cartItems[item._id] > 0) {
                 let itemInfo = item;
                 itemInfo["quantity"] = cartItems[item._id];
-                orderIems.push(itemInfo);
+                orderItems.push(itemInfo);
             }
         });
     
         let orderData = {
             address: data,
-            items: orderIems,
+            items: orderItems,
             amount: getTotalCartAmount()+2,
         }
 
