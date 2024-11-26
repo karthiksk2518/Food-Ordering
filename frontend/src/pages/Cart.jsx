@@ -43,9 +43,9 @@ const Cart = ({ setShowLogin }) => {
                                             className="w-[30px] h-[30px] sm:w-[50px] sm:h-[50px] object-cover rounded-full"
                                         />
                                         <p>{item.name}</p>
-                                        <p>${item.price}</p>
+                                        <p>₹ {item.price}</p>
                                         <p>{cartItems[item._id]}</p>
-                                        <p className="ml-[-6px] sm:ml-0">${item.price * cartItems[item._id]}</p>
+                                        <p className="ml-[-6px] sm:ml-0">₹ {item.price * cartItems[item._id]}</p>
                                         <MdDeleteForever onClick={() => removeFromCart(item._id)} className="cursor-pointer text-[30px]" />
                                     </div>
                                     <hr />
@@ -61,17 +61,17 @@ const Cart = ({ setShowLogin }) => {
                     <div>
                         <div className="cart-total-details flex justify-between text-[#555]">
                             <p>Subtotal</p>
-                            <p>${getTotalCartAmount()}</p>
+                            <p>₹ {getTotalCartAmount()}</p>
                         </div>
                         <hr className="m-[10px_0px]" />
                         <div className="cart-total-details flex justify-between text-[#555]">
                             <p>Delivery Fee</p>
-                            <p>${getTotalCartAmount() === 0 ? 0 : 2}</p>
+                            <p>₹ {getTotalCartAmount() === 0 ? 0 : 20}</p>
                         </div>
                         <hr className="m-[10px_0px]" />
                         <div className="cart-total-details flex justify-between text-[#555]">
                             <b>Total</b>
-                            <b>${getTotalCartAmount() === 0 ? 0 : getTotalCartAmount() + 2}</b>
+                            <b>₹ {getTotalCartAmount() === 0 ? 0 : getTotalCartAmount() + 20}</b>
                         </div>
                     </div>
                     <button
