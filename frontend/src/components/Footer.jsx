@@ -9,7 +9,7 @@ const Footer = () => {
             <div className="w-full grid grid-cols-1 md:grid-cols-4 gap-10 md:gap-20">
                 <div className="col-span-2 flex flex-col items-start gap-5">
                     <img src={assets.yb_logo} alt="" className="w-[50%] h-[40%]"/>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit nostrum libero explicabo recusandae in possimus ipsum quasi et aliquid commodi?</p>
+                    <p>Thank you for choosing <b>YUMMY BASKET</b>, for delicious meals delivered straight to your door. We are committed to providing fresh, quality food with fast, reliable service.</p>
                     <div className="flex ">
                         <FaFacebook className="w-10 text-[60px] mr-[25px] cursor-pointer"/>
                         <BsTwitterX className="w-10 text-[60px] mr-[25px] cursor-pointer"/>
@@ -29,14 +29,14 @@ const Footer = () => {
                 <div className="col-span-2 md:col-span-1 flex flex-col items-start gap-5">
                     <h2 className="text-white text-2xl">GET IN TOUCH</h2>
                     <ul>
-                        <li className="mb-2.5 cursor-pointer">+91-7566236975</li>
-                        <li className="mb-2.5 cursor-pointer">karthikpatidar2518@gmail.com</li>
+                        <li className="mb-2.5 cursor-pointer">+91-9999999887</li>
+                        <li className="mb-2.5 cursor-pointer">yummybasket12@gmail.com</li>
                     </ul>
                 </div>
             </div>
             <hr className="w-[100%] h-0.5 my-5 mx-0 bg-gray-500 border-none"/>
             <p className="text-center">
-                &copy; 2024 Karthik Patidar - All Right Reserved.
+                &copy; 2024 Yummy Basket - All Right Reserved.
             </p>
         </div>
     )
