@@ -114,7 +114,7 @@ const Add = ({url}) => {
                             type="Number"
                             value={data.price}
                             name="price"
-                            placeholder="$20"
+                            placeholder="₹ 20"
                             className="max-w-[120px] p-[5px]"
                             onChange={changeHandler}
                         />

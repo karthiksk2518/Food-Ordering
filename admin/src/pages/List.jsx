@@ -51,7 +51,7 @@ const List = ({url}) => {
                             <img className="w-[50px]" src={`${url}/images/` + item.image} alt="" />
                             <p>{item.name}</p>
                             <p>{item.category}</p>
-                            <p>${item.price}</p>
+                            <p>₹ {item.price}</p>
                             <MdDeleteForever 
                                 className="w-[20px] h-[20px] sm:w-[30px] sm:h-[30px] cursor-pointer" 
                                 onClick={() => removeFood(item._id)}    
