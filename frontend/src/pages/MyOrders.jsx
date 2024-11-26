@@ -37,7 +37,7 @@ const MyOrders = () => {
                                     }
                                 })}
                             </p>
-                            <p>${order.amount}</p>
+                            <p>₹ {order.amount}</p>
                             <p>Items: {order.items.length}</p>
                             <p className="flex gap-1">
                                 <span className="text-[#7608f0]">&#x25cf;</span> 
