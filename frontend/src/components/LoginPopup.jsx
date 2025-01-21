@@ -1,6 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import { ImCancelCircle } from "react-icons/im";
 import {StoreContext} from "../Context/StoreContext";
+import { PropTypes } from "prop-types";
 import { toast } from "react-hot-toast";
 import axios from "axios";
 import './LoginPopup.css'
@@ -134,4 +135,7 @@ const LoginPopup = ({ setShowLogin }) => {
     )
 }
 
+LoginPopup.propTypes = {
+    setShowLogin: PropTypes.string.isRequired,
+};
 export default LoginPopup

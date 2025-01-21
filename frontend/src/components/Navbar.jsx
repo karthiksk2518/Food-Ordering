@@ -7,6 +7,7 @@ import { StoreContext } from '../Context/StoreContext';
 import { IoBagHandleOutline } from "react-icons/io5";
 import { MdOutlineLogout } from "react-icons/md";
 import { toast } from "react-hot-toast";
+import { PropTypes } from "prop-types";
 import "./Navbar.css";
 
 const Navbar = ({ setShowLogin }) => {
@@ -70,6 +71,10 @@ const Navbar = ({ setShowLogin }) => {
         </div>
     )
 } 
+
+Navbar.propTypes = {
+    setShowLogin: PropTypes.string.isRequired,
+};
 
 export default Navbar
 

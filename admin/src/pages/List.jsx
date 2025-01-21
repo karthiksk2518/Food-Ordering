@@ -5,7 +5,6 @@ import { MdDeleteForever } from "react-icons/md";
 
 const List = ({url}) => {
 
-
     const [list, setList] = useState([]);
 
     const fetchList = async () => {

@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { StoreContext } from "../Context/StoreContext";
 import { MdDeleteForever } from "react-icons/md";
 import { useNavigate } from "react-router-dom";
+import { PropTypes } from "prop-types";
 import{ toast } from 'react-hot-toast';
 
 const Cart = ({ setShowLogin }) => {
@@ -99,5 +100,9 @@ const Cart = ({ setShowLogin }) => {
         </div>
     )
 }
+
+Cart.propTypes = {
+    setShowLogin: PropTypes.string.isRequired,
+};
 
 export default Cart

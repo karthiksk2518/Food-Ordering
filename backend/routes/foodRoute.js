@@ -4,7 +4,6 @@ const foodRouter = express.Router();
 
 const { addFood, listFood, removeFood } = require("../controllers/foodController");
 
-
 //image storage engine
 const storage = multer.diskStorage({
     destination: "uploads",
