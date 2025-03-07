@@ -26,7 +26,7 @@ const Navbar = ({ setShowLogin }) => {
     return (
         <div className="pt-5 w-[100%] flex justify-between items-center navbar">
             <Link to="/"><img src={assets.yb_logo} alt="" className="w-[120px] md:w-[140px] lg:w-[150px] navbar-logo" /></Link>
-            <ul className="hidden md:flex list-none md:gap-3 lg:gap-5 text-[#49557e] text-[18px]">
+            <ul className="hidden sm:flex list-none md:gap-3 lg:gap-5 text-[#49557e] sm:text-[16px] md:text-[18px]">
                 <Link to="/" onClick={() => setMenu("home")} className={`${menu === 'home' ? 'pb-1 border-b-2 border-[#7608f0]' : ''} cursor-pointer`}>
                     Home
                 </Link>
