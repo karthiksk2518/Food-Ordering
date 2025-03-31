@@ -136,6 +136,6 @@ const LoginPopup = ({ setShowLogin }) => {
 }
 
 LoginPopup.propTypes = {
-    setShowLogin: PropTypes.string.isRequired,
+    setShowLogin: PropTypes.func.isRequired,
 };
 export default LoginPopup
