@@ -102,7 +102,7 @@ const Cart = ({ setShowLogin }) => {
 }
 
 Cart.propTypes = {
-    setShowLogin: PropTypes.string.isRequired,
+    setShowLogin: PropTypes.func.isRequired,
 };
 
 export default Cart
