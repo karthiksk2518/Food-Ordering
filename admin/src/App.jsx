@@ -8,7 +8,7 @@ import { Toaster } from 'react-hot-toast';
 
 const App = () => {
 
-  const url = 'https://food-ordering-backend-gbvs.onrender.com';
+  const url = import.meta.env.VITE_API_URL;
 
   return (
     <div>
