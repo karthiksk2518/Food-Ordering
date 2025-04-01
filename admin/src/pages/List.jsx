@@ -2,8 +2,9 @@ import axios from "axios";
 import { useEffect, useState } from "react"
 import { toast } from "react-hot-toast";
 import { MdDeleteForever } from "react-icons/md";
+import PropTypes from "prop-types";
 
-const List = ({url}) => {
+const List = ({ url }) => {
 
     const [list, setList] = useState([]);
 
@@ -62,5 +63,9 @@ const List = ({url}) => {
         </div>
     )
 }
+
+List.propTypes = {
+    url: PropTypes.string.isRequired,
+};
 
 export default List

@@ -2,8 +2,9 @@ import { useState } from "react"
 import { assets } from "../assets/assets"
 import axios from "axios"
 import { toast } from "react-hot-toast";
+import PropTypes from "prop-types";
 
-const Add = ({url}) => {
+const Add = ({ url }) => {
     
     const [image, setImage] = useState(false);
     const [data, setData] = useState({
@@ -130,5 +131,9 @@ const Add = ({url}) => {
         </div>
     )
 }
+
+Add.propTypes = {
+    url: PropTypes.string.isRequired,
+};
 
 export default Add

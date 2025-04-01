@@ -3,8 +3,9 @@ import axios from "axios";
 import { toast } from "react-hot-toast";
 import { useEffect } from "react";
 import { assets } from "../assets/assets";
+import PropTypes from "prop-types";
 
-const Orders = ({url}) => {
+const Orders = ({ url }) => {
 
     const [orders, setOrders] = useState([]);
 
@@ -78,5 +79,9 @@ const Orders = ({url}) => {
         </div>
     )
 }
+
+Orders.propTypes = {
+    url: PropTypes.string.isRequired,
+};
 
 export default Orders
