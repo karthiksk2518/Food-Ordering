@@ -6,6 +6,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { StoreContext } from '../Context/StoreContext';
 import { IoBagHandleOutline } from "react-icons/io5";
 import { MdOutlineLogout } from "react-icons/md";
+import { IoGiftOutline } from "react-icons/io5";
 import { toast } from "react-hot-toast";
 import { PropTypes } from "prop-types";
 import "./Navbar.css";
@@ -58,6 +59,12 @@ const Navbar = ({ setShowLogin }) => {
                                 className='flex justify-center items-center gap-2.5 cursor-pointer hover:text-[#7608f0]'>
                                 <IoBagHandleOutline className='w-[25px] h-[30px] text-[#7608f0]'/>
                                 <p>Orders</p>
+                            </li>
+                            <hr />
+                            <li onClick={() => navigate("/reward")}
+                                className='flex justify-center items-center gap-2.5 cursor-pointer hover:text-[#7608f0]'>
+                                <IoGiftOutline  className='w-[25px] h-[30px] text-[#7608f0]'/>
+                                <p>Reward</p>
                             </li>
                             <hr />
                             <li className='flex justify-center items-center gap-2.5 cursor-pointer hover:text-[#7608f0]'>
