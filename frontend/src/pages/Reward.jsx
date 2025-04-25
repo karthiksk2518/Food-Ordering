@@ -1,11 +1,11 @@
 
 
 const Reward = () => {
-  return (
-    <div>
-      
-    </div>
-  )
+    return (
+        <div>
+            <h1>Kundan</h1>
+        </div>
+    )
 }
 
 export default Reward
