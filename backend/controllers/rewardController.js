@@ -1,8 +1,7 @@
 const Reward = require('../models/rewardModel');
-// const Order = require('../models/Order');
 
 exports.calculateRewardPoints = async (order) => {
-    const amount = order.totalAmount;
+    const amount = order.amount;
     let points = 0;
 
     if (amount >= 200 && amount <= 500) {
@@ -12,7 +11,7 @@ exports.calculateRewardPoints = async (order) => {
     }
 
     const reward = new Reward({
-        user: order.user,
+        user: order.userId,
         orderId: order._id,
         amount,
         points
@@ -27,6 +26,7 @@ exports.getUserRewards = async (req, res) => {
         const totalPoints = rewards.reduce((sum, r) => sum + r.points, 0);
         res.json({ totalPoints, rewards });
     } catch (err) {
+        console.error(err);
         res.status(500).json({ error: 'Server Error' });
     }
 };
