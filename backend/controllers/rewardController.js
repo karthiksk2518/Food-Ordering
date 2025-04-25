@@ -20,13 +20,23 @@ exports.calculateRewardPoints = async (order) => {
     await reward.save();
 };
 
+// exports.getUserRewards = async (req, res) => {
+//     try {
+//         const rewards = await Reward.find({ user: req.user._id }).populate('orderId');
+//         const totalPoints = rewards.reduce((sum, r) => sum + r.points, 0);
+//         res.json({ totalPoints, rewards });
+//     } catch (err) {
+//         console.error(err);
+//         res.status(500).json({ error: 'Server Error' });
+//     }
+// };
+
 exports.getUserRewards = async (req, res) => {
     try {
-        const rewards = await Reward.find({ user: req.user._id }).populate('orderId');
+        const rewards = await Reward.find({ user: req.user.id }).populate('orderId'); // Use req.user.id
         const totalPoints = rewards.reduce((sum, r) => sum + r.points, 0);
         res.json({ totalPoints, rewards });
     } catch (err) {
-        console.error(err);
         res.status(500).json({ error: 'Server Error' });
     }
 };
