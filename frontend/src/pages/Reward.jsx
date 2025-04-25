@@ -10,9 +10,10 @@ const Reward = () => {
 
     const fetchRewards = async () => {
         try {
-            const response = await axios.post(url + "/api/reward/myRewards", {}, { headers: { token } });
+            const response = await axios.get(url + "/api/reward/myRewards", {}, { headers: { token } });
             setRewards(response.data.rewards);
             setTotalPoints(response.data.totalPoints);
+            console.log("Kundan ji")
         } catch (error) {
             console.error("Error fetching rewards:", error);
         }
