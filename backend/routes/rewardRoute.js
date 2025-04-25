@@ -1,9 +1,9 @@
 const express = require('express');
-const router = express.Router();
+const rewardRouter = express.Router();
 
 const rewardController = require('../controllers/rewardController');
-const authMiddleware = require('../middleware/authMiddleware');
+const { authMiddleware } = require('../middleware/auth');
 
-router.get('/my-rewards', authMiddleware, rewardController.getUserRewards);
+rewardRouter.get('/myRewards', authMiddleware, rewardController.getUserRewards);
 
-module.exports = router;
+module.exports = rewardRouter;

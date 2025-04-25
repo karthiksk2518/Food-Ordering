@@ -10,9 +10,7 @@ const Reward = () => {
 
     const fetchRewards = async () => {
         try {
-            const response = await axios.get(url + "/api/rewards/my-rewards", {
-                headers: { token },
-            });
+            const response = await axios.get(url + "/api/reward/myRewards", {}, { headers: { token } });
             setRewards(response.data.rewards);
             setTotalPoints(response.data.totalPoints);
         } catch (error) {
