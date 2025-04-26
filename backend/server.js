@@ -14,10 +14,13 @@ const foodRouter = require("./routes/foodRoute");
 const userRouter = require("./routes/userRoute");
 const cartRouter = require("./routes/cartRoute");
 const orderRouter = require("./routes/orderRoute");
+const rewardRouter = require("./routes/rewardRoute");
+
 app.use("/api/food", foodRouter);
 app.use("/api/user", userRouter);
 app.use("/api/cart", cartRouter);
 app.use("/api/order", orderRouter);
+app.use("/api/reward", rewardRouter);
 app.use("/images", express.static('uploads'));
 
 app.get("/", (req,res) => {

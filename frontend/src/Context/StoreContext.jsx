@@ -2,7 +2,6 @@ import { createContext, useEffect, useState } from "react";
 import { PropTypes } from 'prop-types';
 import axios from "axios"
 
-
 export const StoreContext = createContext(null)
 
 const StoreContextProvider = (props) => {
@@ -11,6 +10,13 @@ const StoreContextProvider = (props) => {
     const [cartItems, setCartItems] = useState({});
     const [token, setToken] = useState("");
     const [food_list, setfood_list] = useState([]);
+    const [rewardSummary, setRewardSummary] = useState({
+        totalRewardPoints: 0,
+        usedPoints: 0,
+        remainingPoints: 0
+    });
+    const [useRewards, setUseRewards] = useState(false);
+    const [usedRewardPoints, setUsedRewardPoints] = useState(0);
 
     const addToCart = async (itemId) => {
         if (!cartItems[itemId]) {
@@ -52,16 +58,32 @@ const StoreContextProvider = (props) => {
         setCartItems(response.data.cartData);
     }
 
+    const fetchRewardSummary = async () => {
+        if (token) {
+            const response = await axios.post(url + "/api/reward/getRewardSummary", {}, { headers: { token } });
+            setRewardSummary(response.data.data);
+            // Update usedRewardPoints based on useRewards and remainingPoints
+            setUsedRewardPoints(useRewards ? Math.floor(response.data.data.remainingPoints * 0.1) : 0);
+        }
+    };
+
     useEffect(() => {
         async function loadData() {
             await fetchFoodList();
             if(localStorage.getItem("token")) {
                 setToken(localStorage.getItem("token"));
                 await loadCartData(localStorage.getItem("token"));
+                await fetchRewardSummary();
             }
         }
         loadData();
-    },[]);
+    }, []);
+
+    useEffect(() => {
+        if (token) {
+            fetchRewardSummary();
+        }
+    }, [token, useRewards]);
 
     const contextValue = {
         food_list,
@@ -72,7 +94,11 @@ const StoreContextProvider = (props) => {
         getTotalCartAmount,
         url,
         token,
-        setToken
+        setToken,
+        rewardSummary,
+        useRewards,
+        setUseRewards,
+        usedRewardPoints
     }
 
     return (
@@ -80,7 +106,6 @@ const StoreContextProvider = (props) => {
             {props.children}
         </StoreContext.Provider>
     )
-
 }
 
 StoreContextProvider.propTypes = {

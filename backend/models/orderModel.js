@@ -2,7 +2,8 @@ const mongoose = require("mongoose");
 
 const orderSchema = new mongoose.Schema({
     userId: {
-        type: String,
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "user",
         required: true
     },
     items: {
@@ -19,18 +20,20 @@ const orderSchema = new mongoose.Schema({
     },
     status: {
         type: String,
-        default: "Food Processing",
+        default: "Food Processing"
     },
     date: {
         type: Date,
-        default: Date.now()
+        default: Date.now
     },
     payment: {
         type: Boolean,
         default: false
+    },
+    usedRewardPoints: {
+        type: Number,
+        default: 0
     }
 });
 
-const orderModel = mongoose.model.order || mongoose.model("order", orderSchema);
-
-module.exports = orderModel;
+module.exports = mongoose.model("order", orderSchema);

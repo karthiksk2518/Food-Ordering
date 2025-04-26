@@ -3,21 +3,24 @@ import { StoreContext } from "../Context/StoreContext";
 import { MdDeleteForever } from "react-icons/md";
 import { useNavigate } from "react-router-dom";
 import { PropTypes } from "prop-types";
-import{ toast } from 'react-hot-toast';
+import { toast } from 'react-hot-toast';
 
 const Cart = ({ setShowLogin }) => {
-
-    const { cartItems, food_list, removeFromCart, getTotalCartAmount, url, token } = useContext(StoreContext);
+    const { cartItems, food_list, removeFromCart, getTotalCartAmount, url, token, rewardSummary, useRewards, setUseRewards, usedRewardPoints } = useContext(StoreContext);
     const navigate = useNavigate();
 
     const loginVerify = () => {
-        if(token) {
+        if (token) {
             navigate('/order');
-        }
-        else {
+        } else {
             setShowLogin(true);
         }
     }
+
+    const subtotal = getTotalCartAmount();
+    const deliveryFee = subtotal === 0 ? 0 : 20;
+    const rewardDiscount = usedRewardPoints; // 1 point = 1 rupee
+    const total = subtotal + deliveryFee - rewardDiscount;
 
     return (
         <div className="cart mt-[100px]">
@@ -40,7 +43,7 @@ const Cart = ({ setShowLogin }) => {
                                     <div className="cart-items-item m-[10px_0px] text-black grid grid-cols-custom items-center"
                                         style={{ fontSize: 'max(1vw, 12px)' }}
                                     >
-                                        <img src={url + "/images/" +item.image} alt=""
+                                        <img src={url + "/images/" + item.image} alt=""
                                             className="w-[30px] h-[30px] sm:w-[50px] sm:h-[50px] object-cover rounded-full"
                                         />
                                         <p>{item.name}</p>
@@ -62,23 +65,32 @@ const Cart = ({ setShowLogin }) => {
                     <div>
                         <div className="cart-total-details flex justify-between text-[#555]">
                             <p>Subtotal</p>
-                            <p>₹ {getTotalCartAmount()}</p>
+                            <p>₹ {subtotal}</p>
                         </div>
                         <hr className="m-[10px_0px]" />
+                        {usedRewardPoints > 0 && (
+                            <>
+                                <div className="cart-total-details flex justify-between text-[#555]">
+                                    <p>Reward Points</p>
+                                    <p>-₹ {usedRewardPoints}</p>
+                                </div>
+                                <hr className="m-[10px_0px]" />
+                            </>
+                        )}
                         <div className="cart-total-details flex justify-between text-[#555]">
                             <p>Delivery Fee</p>
-                            <p>₹ {getTotalCartAmount() === 0 ? 0 : 20}</p>
+                            <p>₹ {deliveryFee}</p>
                         </div>
                         <hr className="m-[10px_0px]" />
                         <div className="cart-total-details flex justify-between text-[#555]">
                             <b>Total</b>
-                            <b>₹ {getTotalCartAmount() === 0 ? 0 : getTotalCartAmount() + 20}</b>
+                            <b>₹ {total}</b>
                         </div>
                     </div>
                     <button
                         className="border-none text-white bg-[#7608f0] p-[12px_0px] rounded-[4px] cursor-pointer"
                         style={{ width: 'max(15vw, 200px)' }}
-                        onClick={getTotalCartAmount() === 0 ? () => {toast.error("Add Item Into Cart")} : loginVerify}
+                        onClick={subtotal === 0 ? () => { toast.error("Add Item Into Cart") } : loginVerify}
                     >
                         PROCEED TO CHECKOUT
                     </button>
@@ -93,6 +105,18 @@ const Cart = ({ setShowLogin }) => {
                                 className="bg-transparent border-none outline-none pl-2.5"
                             />
                             <button className="p-[12px_5px] bg-black border-none text-white rounded-[4px]" style={{ width: 'max(10vw, 150px)' }}>Submit</button>
+                        </div>
+                        <div className="cart-reward-checkbox mt-2.5 flex items-center gap-2">
+                            <input
+                                type="checkbox"
+                                id="useRewards"
+                                checked={useRewards}
+                                onChange={() => setUseRewards(!useRewards)}
+                                disabled={rewardSummary.remainingPoints === 0}
+                            />
+                            <label htmlFor="useRewards" className="text-[#555]">
+                                Use Reward Points (10% of {rewardSummary.remainingPoints} = {usedRewardPoints} points)
+                            </label>
                         </div>
                     </div>
                 </div>
