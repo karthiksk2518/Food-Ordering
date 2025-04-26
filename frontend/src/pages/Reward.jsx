@@ -67,7 +67,7 @@ const Reward = () => {
                             <button
                                 className="border-none p-[12px_0px] rounded-lg bg-[#b560fb] text-black text-[10px] sm:text-xs md:text-sm font-medium cursor-pointer"
                             >
-                                Reward Points: {reward.rewardPoints}
+                                Points: {reward.rewardPoints}
                             </button>
                         </div>
                     );
