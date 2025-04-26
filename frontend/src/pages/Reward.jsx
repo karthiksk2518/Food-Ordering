@@ -39,9 +39,9 @@ const Reward = () => {
         <div className="my-orders m-[50px_0px]">
             <h2 className="font-bold text-2xl">My Rewards</h2>
             <div className="reward-summary mt-4 text-lg flex flex-col sm:flex-row gap-2 sm:gap-6">
-                <span className="font-semibold">Total Points: {rewardSummary.totalRewardPoints}</span>
-                <span className="font-semibold">Remaining Points: {rewardSummary.remainingPoints}</span>
-                <span className="font-semibold">Used Points: {rewardSummary.usedPoints}</span>
+                <span className="font-medium">Total Points: {rewardSummary.totalRewardPoints}</span>
+                <span className="font-medium">Remaining Points: {rewardSummary.remainingPoints}</span>
+                <span className="font-medium">Used Points: {rewardSummary.usedPoints}</span>
             </div>
             <div className="container flex flex-col gap-5 mt-7">
                 {data.map((reward, index) => {
