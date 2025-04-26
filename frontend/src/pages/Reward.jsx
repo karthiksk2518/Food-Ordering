@@ -38,7 +38,7 @@ const Reward = () => {
     return (
         <div className="my-orders m-[50px_0px]">
             <h2 className="font-bold text-2xl">My Rewards</h2>
-            <div className="reward-summary mt-4 text-lg flex gap-6">
+            <div className="reward-summary mt-4 text-lg flex flex-col sm:flex-row gap-2 sm:gap-6">
                 <span className="font-semibold">Total Points: {rewardSummary.totalRewardPoints}</span>
                 <span className="font-semibold">Remaining Points: {rewardSummary.remainingPoints}</span>
                 <span className="font-semibold">Used Points: {rewardSummary.usedPoints}</span>
