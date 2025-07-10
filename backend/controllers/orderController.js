@@ -12,7 +12,7 @@ const orderDataStore = new Map();
 const ORDER_EXPIRY_MS = 2 * 60 * 1000;
 
 exports.placeOrder = async (req, res) => {
-    const frontend_url = "https://food-ordering-kp.vercel.app";
+    const frontend_url = "http://localhost:5173";
     try {
         const { userId, items, amount, address, usedRewardPoints = 0 } = req.body;
 
